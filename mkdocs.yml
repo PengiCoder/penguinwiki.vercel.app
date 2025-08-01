@@ -1,0 +1,30 @@
+site_name: Welcome to the World of Penguins!
+site_description: A comprehensive guide to penguins
+site_url: https://your-site.com
+repo_url: https://github.com/PengiCoder/Penguin
+repo_name: Repository
+
+theme:
+  name: null
+  custom_dir: theme
+  language: en
+
+nav:
+  - Home: index.md
+  - Pages: pages/index.md
+  - About: about/index.md
+  - Contact: contact/index.md
+  - Gallery: gallery/index.md
+  - FAQs: faqs/index.md
+  - Search: search/index.md
+
+plugins:
+  - search
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+
+copyright: <span class="copyleft">©</span> PengiCoder & MrPiggy105, 2025

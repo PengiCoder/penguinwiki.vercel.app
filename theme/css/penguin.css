@@ -1,0 +1,629 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, Arial, sans-serif;
+    background-image: url(../assets/decoration.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000;
+}
+
+a {
+    color: #54a2f0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header styles */
+.header {
+    background-color: rgba(91, 155, 219, 0.8);
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    text-align: center;
+    height: 100%;
+    font-family: Orkney, Arial, sans-serif;
+    margin: 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Main content container */
+.container {
+    margin: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    min-height: 60vh;
+}
+
+/* Navigation styles */
+.contents {
+    float: left;
+    width: 30%;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.contents ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contents li {
+    margin-bottom: 10px;
+}
+
+.contents h2 {
+    color: #333;
+    border-bottom: 2px solid #54a2f0;
+    padding-bottom: 5px;
+}
+
+/* Top navigation bar */
+.navbar {
+    background-color: rgba(40, 43, 46, 0.75);
+    opacity: 0.925;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    border-right: 1px solid rgb(121, 121, 121);
+}
+
+.navbar li:last-child {
+    border-right: none;
+    border-left: 1px solid rgb(121, 121, 121);
+    margin-left: auto;
+}
+
+.navbar a {
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: rgba(40, 43, 46, 0.75);
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #000;
+}
+
+.navbar a.active {
+    background-color: #5b9bdb;
+}
+
+/* Content sections */
+.content {
+    overflow: hidden;
+    margin-left: 32%;
+}
+
+.content section {
+    margin-bottom: 20px;
+}
+
+.content h1 {
+    text-align: center;
+    font-family: Orkney, Arial, sans-serif;
+    color: #333;
+    border-bottom: 3px solid #54a2f0;
+    padding-bottom: 10px;
+}
+
+.content h2 {
+    color: #5b9bdb;
+    border-bottom: 2px solid #54a2f0;
+    padding-bottom: 5px;
+}
+
+.content h3 {
+    color: #333;
+}
+
+.content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.content ul {
+    margin-bottom: 15px;
+}
+
+.content li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* When no TOC present */
+.content.full-width {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 3px solid #54a2f0;
+}
+
+footer p {
+    margin: 0;
+    color: #666;
+}
+
+/* Copyleft symbol */
+.copyleft {
+    display: inline-block;
+    transform: rotate(180deg);
+}
+
+/* Search functionality */
+.search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border: 2px solid #54a2f0;
+    border-radius: 20px;
+    font-size: 14px;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(84, 162, 240, 0.3);
+}
+
+/* Code blocks */
+code {
+    background-color: rgba(84, 162, 240, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+pre {
+    background-color: rgba(40, 43, 46, 0.9);
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(91, 155, 219, 0.8);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(84, 162, 240, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .contents {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .content {
+        margin-left: 0;
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+    }
+    
+    .navbar li {
+        border-right: none;
+        border-bottom: 1px solid rgb(121, 121, 121);
+        width: 100%;
+    }
+    
+    .navbar li:last-child {
+        border-left: none;
+        margin-left: 0;
+    }
+    
+    .search-input {
+        width: 150px;
+    }
+    
+    .search-input:focus {
+        width: 200px;
+    }
+    
+    .header h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 5px;
+        padding: 10px;
+    }
+    
+    .navbar a {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .header {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.3em;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar, .contents, footer {
+        display: none;
+    }
+    
+    .container {
+        margin: 0;
+        background: white;
+        box-shadow: none;
+    }
+    
+    .content {
+        margin-left: 0;
+    }
+    
+    body {
+        background: white;
+    }
+}
+
+/* Accessibility improvements */
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Focus styles */
+a:focus, button:focus, input:focus {
+    outline: 2px solid #54a2f0;
+    outline-offset: 2px;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Enhanced code block styles */
+.code-block-wrapper {
+    position: relative;
+    margin: 15px 0;
+}
+
+.code-toolbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.copy-button {
+    background: rgba(91, 155, 219, 0.8);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+    background: rgba(91, 155, 219, 1);
+    transform: translateY(-1px);
+}
+
+.copy-button.copied {
+    background: #28a745;
+}
+
+/* Enhanced table styles */
+.table-wrapper {
+    overflow-x: auto;
+    position: relative;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-indicator {
+    display: none;
+    text-align: center;
+    padding: 8px;
+    background: rgba(84, 162, 240, 0.1);
+    color: #666;
+    font-size: 12px;
+    border-top: 1px solid #ddd;
+}
+
+/* Search enhancements */
+.search-highlight {
+    background: #ffeb3b;
+    color: #000;
+    padding: 1px 2px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.search-results-indicator {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #54a2f0;
+    border-top: none;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #666;
+    border-radius: 0 0 4px 4px;
+    z-index: 1000;
+    display: none;
+}
+
+/* Active TOC links */
+.contents a.active {
+    color: #5b9bdb;
+    font-weight: bold;
+    background: rgba(84, 162, 240, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Dark theme styles */
+.dark-theme {
+    background-image: none;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-theme .container {
+    background-color: rgba(40, 40, 40, 0.9);
+    color: #e0e0e0;
+}
+
+.dark-theme .header {
+    background-color: rgba(40, 43, 46, 0.9);
+}
+
+.dark-theme footer {
+    background-color: rgba(40, 40, 40, 0.9);
+}
+
+.dark-theme .navbar a {
+    background-color: rgba(60, 63, 66, 0.9);
+}
+
+.dark-theme .navbar a:hover {
+    background-color: #333;
+}
+
+.dark-theme .search-results-indicator {
+    background: #333;
+    border-color: #54a2f0;
+    color: #ccc;
+}
+
+.dark-theme .search-highlight {
+    background: #ff9800;
+    color: #000;
+}
+
+.dark-theme pre {
+    background-color: rgba(20, 23, 26, 0.9);
+}
+
+.dark-theme code {
+    background-color: rgba(84, 162, 240, 0.2);
+}
+
+.dark-theme th {
+    background-color: rgba(91, 155, 219, 0.9);
+}
+
+.dark-theme tr:nth-child(even) {
+    background-color: rgba(84, 162, 240, 0.2);
+}
+
+.dark-theme .scroll-indicator {
+    background: rgba(84, 162, 240, 0.2);
+    color: #ccc;
+    border-color: #444;
+}
+
+/* View transition styles */
+[data-mkdocs-transition] {
+    view-transition-name: main;
+}
+
+[data-mkdocs-transition="forward"] {
+    animation: slideInFromRight 0.3s ease-out;
+}
+
+[data-mkdocs-transition="back"] {
+    animation: slideInFromLeft 0.3s ease-out;
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Printing styles */
+.printing * {
+    transition: none !important;
+    animation: none !important;
+}
+
+.printing .navbar,
+.printing .contents {
+    display: none;
+}
+
+.printing .content {
+    margin-left: 0;
+}
+
+/* Loading states */
+img.lazy {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img.loaded {
+    opacity: 1;
+}
+
+/* Focus improvements */
+.copy-button:focus-visible,
+.search-input:focus-visible {
+    outline: 2px solid #54a2f0;
+    outline-offset: 2px;
+}
+
+/* Animation for content changes */
+.content-fade-in {
+    animation: contentFadeIn 0.4s ease-out;
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effects for interactive elements */
+.contents a:hover,
+.navbar a:hover {
+    transform: translateX(2px);
+    transition: transform 0.2s ease;
+}
+
+/* Better focus indicators */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #54a2f0;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Theme toggle button (if added) */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(91, 155, 219, 0.9);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    background: rgba(91, 155, 219, 1);
+}

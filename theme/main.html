@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ config.site_description }}">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+    
+    <link rel="icon" href="{{ 'assets/favicon.png'|url }}">
+    <link rel="stylesheet" href="{{ 'css/penguin.css'|url }}">
+    
+    {% if config.google_analytics %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.google_analytics[0] }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ config.google_analytics[0] }}');
+    </script>
+    {% endif %}
+</head>
+<body>
+    <header class="header">
+        <h1>{{ config.site_name }}</h1>
+    </header>
+
+    <div class="navbar">
+        <nav class="navbar">
+            <ul>
+                {% for nav_item in nav %}
+                <li>
+                    <a href="{{ nav_item.url|url }}" 
+                       class="{% if nav_item.active %}active{% else %}inactive{% endif %}">
+                        {{ nav_item.title }}
+                    </a>
+                </li>
+                {% endfor %}
+                {% if config.repo_url %}
+                <li>
+                    <a href="{{ config.repo_url }}" target="_blank">
+                        {{ config.repo_name or "Repository" }}
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="container">
+            {% if page.toc %}
+            <nav class="contents">
+                <h2>Contents:</h2>
+                <ul>
+                    {% for toc_item in page.toc %}
+                    <li><a href="{{ toc_item.url }}">{{ toc_item.title }}</a></li>
+                    {% if toc_item.children %}
+                        {% for child in toc_item.children %}
+                        <li style="margin-left: 20px;">
+                            <a href="{{ child.url }}">{{ child.title }}</a>
+                        </li>
+                        {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+            <hr>
+            {% endif %}
+
+            <div class="content">
+                {{ page.content }}
+            </div>
+        </div>
+
+        <footer>
+            <p>{{ config.copyright }}</p>
+        </footer>
+    </main>
+
+    <script src="{{ 'js/penguin.js'|url }}"></script>
+</body>
+</html>
